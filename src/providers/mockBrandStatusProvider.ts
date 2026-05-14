@@ -31,7 +31,8 @@ function isBrandStatus(value: unknown): value is BrandStatus {
 
 export const mockBrandStatusProvider: BrandStatusProvider = {
   async getBrandStatuses(): Promise<BrandStatus[]> {
-    const response = await fetch("/brand-status.json", { cache: "no-store" });
+    const statusDataUrl = new URL("brand-status.json", import.meta.env.BASE_URL);
+    const response = await fetch(statusDataUrl, { cache: "no-store" });
 
     if (!response.ok) {
       throw new Error(`Failed to load brand status data (${response.status})`);
