@@ -42,6 +42,8 @@ In GitHub, enable Pages with:
 Settings -> Pages -> Build and deployment -> Source: GitHub Actions
 ```
 
+If deployment fails with `Failed to create deployment (status: 404)`, check that Pages has been enabled for the repository and that the source is set to `GitHub Actions`, then rerun the workflow.
+
 After the workflow finishes, the site should be available at:
 
 ```text
