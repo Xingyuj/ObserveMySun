@@ -1,0 +1,112 @@
+[
+  {
+    "brandId": "aami",
+    "brandName": "AAMI",
+    "status": "HEALTHY",
+    "availability": 99.98,
+    "errorRate": 0.03,
+    "p95LatencyMs": 214,
+    "activeProblems": 0,
+    "lastUpdated": "2026-05-15T00:42:00.000Z"
+  },
+  {
+    "brandId": "gio",
+    "brandName": "GIO",
+    "status": "WARNING",
+    "availability": 99.71,
+    "errorRate": 0.19,
+    "p95LatencyMs": 382,
+    "activeProblems": 1,
+    "lastUpdated": "2026-05-15T00:41:00.000Z"
+  },
+  {
+    "brandId": "bingle",
+    "brandName": "Bingle",
+    "status": "HEALTHY",
+    "availability": 99.95,
+    "errorRate": 0.04,
+    "p95LatencyMs": 245,
+    "activeProblems": 0,
+    "lastUpdated": "2026-05-15T00:43:00.000Z"
+  },
+  {
+    "brandId": "apia",
+    "brandName": "Apia",
+    "status": "CRITICAL",
+    "availability": 97.84,
+    "errorRate": 1.24,
+    "p95LatencyMs": 1180,
+    "activeProblems": 3,
+    "lastUpdated": "2026-05-15T00:40:00.000Z"
+  },
+  {
+    "brandId": "shannons",
+    "brandName": "Shannons",
+    "status": "HEALTHY",
+    "availability": 99.92,
+    "errorRate": 0.06,
+    "p95LatencyMs": 298,
+    "activeProblems": 0,
+    "lastUpdated": "2026-05-15T00:42:30.000Z"
+  },
+  {
+    "brandId": "suncorp",
+    "brandName": "Suncorp",
+    "status": "WARNING",
+    "availability": 99.36,
+    "errorRate": 0.42,
+    "p95LatencyMs": 612,
+    "activeProblems": 2,
+    "lastUpdated": "2026-05-15T00:41:45.000Z"
+  },
+  {
+    "brandId": "terri-scheer",
+    "brandName": "Terri Scheer",
+    "status": "HEALTHY",
+    "availability": 99.99,
+    "errorRate": 0.02,
+    "p95LatencyMs": 188,
+    "activeProblems": 0,
+    "lastUpdated": "2026-05-15T00:39:45.000Z"
+  },
+  {
+    "brandId": "cil-insurance",
+    "brandName": "CIL Insurance",
+    "status": "HEALTHY",
+    "availability": 99.89,
+    "errorRate": 0.07,
+    "p95LatencyMs": 326,
+    "activeProblems": 0,
+    "lastUpdated": "2026-05-15T00:38:30.000Z"
+  },
+  {
+    "brandId": "vero",
+    "brandName": "Vero",
+    "status": "WARNING",
+    "availability": 99.48,
+    "errorRate": 0.31,
+    "p95LatencyMs": 544,
+    "activeProblems": 1,
+    "lastUpdated": "2026-05-15T00:42:10.000Z"
+  },
+  {
+    "brandId": "essentials-by-aai",
+    "brandName": "Essentials by AAI",
+    "status": "HEALTHY",
+    "availability": 99.94,
+    "errorRate": 0.05,
+    "p95LatencyMs": 267,
+    "activeProblems": 0,
+    "lastUpdated": "2026-05-15T00:37:45.000Z"
+  },
+  {
+    "brandId": "aa-insurance",
+    "brandName": "AA Insurance",
+    "status": "HEALTHY",
+    "availability": 99.9,
+    "errorRate": 0.08,
+    "p95LatencyMs": 304,
+    "activeProblems": 0,
+    "lastUpdated": "2026-05-15T00:36:50.000Z"
+  }
+]
