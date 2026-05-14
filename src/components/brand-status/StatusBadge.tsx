@@ -1,4 +1,4 @@
-import type { BrandHealthStatus } from "../domain/brandStatus";
+import type { BrandHealthStatus } from "../../domain/brandStatus";
 
 interface StatusBadgeProps {
   status: BrandHealthStatus;

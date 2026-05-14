@@ -1,4 +1,4 @@
-import type { BrandStatus } from "../domain/brandStatus";
+import type { BrandStatus } from "../../domain/brandStatus";
 import { BrandStatusCard } from "./BrandStatusCard";
 
 interface BrandStatusGridProps {

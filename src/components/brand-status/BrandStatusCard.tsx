@@ -1,4 +1,4 @@
-import type { BrandStatus } from "../domain/brandStatus";
+import type { BrandStatus } from "../../domain/brandStatus";
 import { StatusBadge } from "./StatusBadge";
 
 interface BrandStatusCardProps {

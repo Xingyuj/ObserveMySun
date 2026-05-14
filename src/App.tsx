@@ -1,74 +1,36 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { BrandStatusGrid } from "./components/BrandStatusGrid";
-import { ErrorState } from "./components/ErrorState";
-import { LoadingState } from "./components/LoadingState";
-import { SummaryBar } from "./components/SummaryBar";
-import type { BrandStatus } from "./domain/brandStatus";
-import { mockBrandStatusProvider } from "./providers/mockBrandStatusProvider";
-
-const refreshIntervalMs = 60_000;
+import { SuncorpBrandStatusDashboard } from "./pages/SuncorpBrandStatusDashboard";
 
 export default function App() {
-  const provider = useMemo(() => mockBrandStatusProvider, []);
-  const hasLoadedStatuses = useRef(false);
-  const [statuses, setStatuses] = useState<BrandStatus[]>([]);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isRefreshing, setIsRefreshing] = useState(false);
-
-  const loadStatuses = useCallback(async () => {
-    const hasExistingData = hasLoadedStatuses.current;
-    setErrorMessage(null);
-    setIsLoading(!hasExistingData);
-    setIsRefreshing(hasExistingData);
-
-    try {
-      const nextStatuses = await provider.getBrandStatuses();
-      setStatuses(nextStatuses);
-      hasLoadedStatuses.current = true;
-    } catch (error) {
-      const message = error instanceof Error ? error.message : "An unexpected error occurred.";
-      setErrorMessage(message);
-    } finally {
-      setIsLoading(false);
-      setIsRefreshing(false);
-    }
-  }, [provider]);
-
-  useEffect(() => {
-    void loadStatuses();
-  }, [loadStatuses]);
-
-  useEffect(() => {
-    const timerId = window.setInterval(() => {
-      void loadStatuses();
-    }, refreshIntervalMs);
-
-    return () => window.clearInterval(timerId);
-  }, [loadStatuses]);
-
   return (
-    <main className="app-shell">
-      <header className="page-header">
-        <div>
-          <h1>Suncorp Brand Status Console</h1>
-          <p>Standalone demo for brand-level operational health monitoring</p>
+    <div className="dashboard-layout">
+      <aside className="dashboard-sidebar" aria-label="Primary navigation">
+        <div className="sidebar-brand">
+          <span className="sidebar-brand__mark">S</span>
+          <div>
+            <strong>Suncorp</strong>
+            <span>Observability</span>
+          </div>
         </div>
-        <button className="primary-button" type="button" onClick={() => void loadStatuses()} disabled={isRefreshing}>
-          {isRefreshing ? "Refreshing..." : "Refresh"}
-        </button>
-      </header>
 
-      {isLoading ? (
-        <LoadingState />
-      ) : errorMessage ? (
-        <ErrorState message={errorMessage} onRetry={() => void loadStatuses()} />
-      ) : (
-        <>
-          <SummaryBar statuses={statuses} />
-          <BrandStatusGrid statuses={statuses} />
-        </>
-      )}
-    </main>
+        <nav className="sidebar-nav">
+          <a className="sidebar-nav__item sidebar-nav__item--active" href="/" aria-current="page">
+            <span className="sidebar-nav__icon" aria-hidden="true" />
+            Brand Status
+          </a>
+        </nav>
+      </aside>
+
+      <div className="dashboard-main">
+        <header className="dashboard-topbar">
+          <div>
+            <span className="dashboard-topbar__eyebrow">Operations dashboard</span>
+            <strong>Suncorp Status</strong>
+          </div>
+          <div className="dashboard-topbar__meta">Mock data source</div>
+        </header>
+
+        <SuncorpBrandStatusDashboard />
+      </div>
+    </div>
   );
 }

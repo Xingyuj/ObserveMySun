@@ -1,16 +1,16 @@
-import type { BrandStatus } from "../domain/brandStatus";
+import type { BrandStatus } from "../../domain/brandStatus";
 
-interface SummaryBarProps {
+interface BrandStatusSummaryProps {
   statuses: BrandStatus[];
 }
 
-export function SummaryBar({ statuses }: SummaryBarProps) {
+export function BrandStatusSummary({ statuses }: BrandStatusSummaryProps) {
   const healthyCount = statuses.filter((brand) => brand.status === "HEALTHY").length;
   const warningCount = statuses.filter((brand) => brand.status === "WARNING").length;
   const criticalCount = statuses.filter((brand) => brand.status === "CRITICAL").length;
 
   return (
-    <section className="summary-bar" aria-label="Brand status summary">
+    <section className="summary-grid" aria-label="Brand status summary">
       <SummaryItem label="Total brands" value={statuses.length} tone="neutral" />
       <SummaryItem label="Healthy" value={healthyCount} tone="healthy" />
       <SummaryItem label="Warning" value={warningCount} tone="warning" />
