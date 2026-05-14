@@ -28,6 +28,26 @@ http://127.0.0.1:5173/
 npm run build
 ```
 
+## GitHub Pages
+
+This project includes a GitHub Actions workflow that builds and deploys the app to GitHub Pages from the `main` branch:
+
+```text
+.github/workflows/deploy-github-pages.yml
+```
+
+In GitHub, enable Pages with:
+
+```text
+Settings -> Pages -> Build and deployment -> Source: GitHub Actions
+```
+
+After the workflow finishes, the site should be available at:
+
+```text
+https://<github-username>.github.io/ObserveMySun/
+```
+
 ## Data source
 
 The demo currently loads mock brand health data from:
