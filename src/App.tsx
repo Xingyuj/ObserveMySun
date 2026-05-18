@@ -78,13 +78,7 @@ export default function App() {
 
       <div className="dashboard-main">
         <header className="dashboard-topbar">
-          <button className="icon-button" type="button" aria-label="Open navigation">
-            <span />
-            <span />
-            <span />
-          </button>
           <div className="dashboard-topbar__spacer" />
-          <button className="theme-toggle" type="button" aria-label="Toggle theme" />
           {userName ? (
             <div className="user-menu">
               <div className="user-chip">

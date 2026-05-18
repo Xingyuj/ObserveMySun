@@ -14,13 +14,11 @@ export function SuncorpBrandStatusDashboard() {
   const [statuses, setStatuses] = useState<BrandStatus[]>([]);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [isRefreshing, setIsRefreshing] = useState(false);
 
   const loadStatuses = useCallback(async () => {
     const hasExistingData = hasLoadedStatuses.current;
     setErrorMessage(null);
     setIsLoading(!hasExistingData);
-    setIsRefreshing(hasExistingData);
 
     try {
       const nextStatuses = await provider.getBrandStatuses();
@@ -31,7 +29,6 @@ export function SuncorpBrandStatusDashboard() {
       setErrorMessage(message);
     } finally {
       setIsLoading(false);
-      setIsRefreshing(false);
     }
   }, [provider]);
 
@@ -58,9 +55,6 @@ export function SuncorpBrandStatusDashboard() {
           <span aria-hidden="true">›</span>
           <strong>Brand Status Updates</strong>
         </nav>
-        <button className="primary-button" type="button" onClick={() => void loadStatuses()} disabled={isRefreshing}>
-          {isRefreshing ? "Refreshing..." : "Refresh"}
-        </button>
       </header>
 
       {isLoading ? (
