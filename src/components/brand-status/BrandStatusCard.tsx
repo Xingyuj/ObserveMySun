@@ -1,4 +1,5 @@
 import type { BrandStatus } from "../../domain/brandStatus";
+import { BrandIcon } from "./BrandIcon";
 import { StatusBadge } from "./StatusBadge";
 
 interface BrandStatusCardProps {
@@ -29,7 +30,10 @@ export function BrandStatusCard({ brand }: BrandStatusCardProps) {
   return (
     <article className={`brand-card brand-card--${brand.status.toLowerCase()}`}>
       <div className="brand-card__header">
-        <h2>{brand.brandName}</h2>
+        <div>
+          <h2>{brand.brandName}</h2>
+          <BrandIcon brandId={brand.brandId} brandName={brand.brandName} />
+        </div>
         <StatusBadge status={brand.status} />
       </div>
 
