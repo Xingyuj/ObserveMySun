@@ -252,9 +252,17 @@ a {
   content: "";
 }
 
+.user-menu,
 .user-chip {
   display: flex;
   align-items: center;
+}
+
+.user-menu {
+  gap: 12px;
+}
+
+.user-chip {
   gap: 10px;
   color: #1f2937;
   font-size: 0.78rem;
@@ -269,12 +277,6 @@ a {
   border-radius: 50%;
   background: #1e7bff;
   color: #ffffff;
-}
-
-.user-menu {
-  display: flex;
-  align-items: center;
-  gap: 12px;
 }
 
 .login-button,
@@ -541,21 +543,12 @@ a {
   overflow-x: auto;
 }
 
-<<<<<<< Updated upstream
-.brand-card__header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  min-height: 34px;
-=======
 .brand-table {
   width: 100%;
   min-width: 920px;
   border-collapse: collapse;
   color: #2c3447;
   table-layout: fixed;
->>>>>>> Stashed changes
 }
 
 .brand-table th,
@@ -599,8 +592,6 @@ a {
   font-weight: 900;
 }
 
-<<<<<<< Updated upstream
-=======
 .brand-icon {
   display: inline-flex;
   align-items: center;
@@ -825,7 +816,6 @@ a {
   font-weight: 900;
 }
 
->>>>>>> Stashed changes
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -964,11 +954,4 @@ a {
   .summary-grid {
     grid-template-columns: 1fr;
   }
-<<<<<<< Updated upstream
-
-  .brand-card__header {
-    flex-direction: column;
-  }
-=======
->>>>>>> Stashed changes
 }
