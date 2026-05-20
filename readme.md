@@ -1,4 +1,4 @@
-# Suncorp Brand Status Console
+# Brand Status Console
 
 Standalone React + TypeScript + Vite demo for brand-level operational health monitoring.
 
