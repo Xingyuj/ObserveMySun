@@ -735,27 +735,12 @@ a {
 
 .brand-table th:first-child,
 .brand-table td:first-child {
-  width: 254px;
+  width: 160px;
 }
 
 .brand-table__brand {
-  display: grid;
-  grid-template-columns: 104px minmax(0, 1fr);
+  display: flex;
   align-items: center;
-  gap: 15px;
-}
-
-.brand-table__brand a {
-  color: #0064a8;
-  font-weight: 900;
-  transition:
-    color 170ms ease,
-    transform 170ms ease;
-}
-
-.brand-table tbody tr:hover .brand-table__brand a {
-  color: #1d45c4;
-  transform: translateX(2px);
 }
 
 .brand-icon {
