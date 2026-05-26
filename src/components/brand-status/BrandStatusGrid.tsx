@@ -49,7 +49,6 @@ function BrandStatusTable({ title, tone, statuses }: BrandStatusTableProps) {
                 <td>
                   <div className="brand-table__brand">
                     <BrandIcon brandId={brand.brandId} brandName={brand.brandName} />
-                    <a href="/">{brand.brandName}</a>
                   </div>
                 </td>
                 <td>
